@@ -36,7 +36,7 @@ In the right sidebar, open the Gradle tab.
 Navigate to:
 Tasks → application → run
 inside the Server module.
-Click ▶ Run — this will start the server and make it listen for client connections.
+Click Run — this will start the server and make it listen for client connections.
 🖥️ Run the Client
 In IntelliJ, open the Gradle tab again.
 Navigate to:
