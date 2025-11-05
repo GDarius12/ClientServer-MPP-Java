@@ -1,0 +1,12 @@
+.loginLabel{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+}
+
+.text-field{
+    -fx-background-color: white;
+    -fx-border-color: blue;
+    -fx-border-width: 0.5;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}

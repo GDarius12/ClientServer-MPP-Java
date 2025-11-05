@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Darius.controller.LoginController">
+    <children>
+        <GridPane layoutX="181.0" layoutY="124.0" prefHeight="152.0" prefWidth="256.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="116.20001525878907" minWidth="10.0" prefWidth="95.8" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.59999999999997" minWidth="10.0" prefWidth="158.59999999999997" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="40.4" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="28.0" minHeight="18.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.60000000000001" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="32.0" minHeight="11.0" prefHeight="20.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label prefHeight="19.0" prefWidth="73.0" text="Username: " />
+                <Label text="Password: " GridPane.rowIndex="2" />
+                <TextField fx:id="usernameTextField" prefHeight="27.0" prefWidth="158.0" promptText="Enter your username" styleClass="textField" GridPane.columnIndex="1" />
+                <PasswordField fx:id="passwordTextField" promptText="Enter your password" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label fx:id="usernameErrorLabel" prefHeight="20.0" styleClass="errorLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="passwordErrorLabel" prefHeight="20.0" styleClass="errorLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+        <Label layoutX="287.0" layoutY="39.0" styleClass="loginLabel" text="Login" />
+        <Button layoutX="281.0" layoutY="307.0" mnemonicParsing="false" onAction="#loginButtonHandler" styleClass="button" text="Login" />
+    </children>
+    <stylesheets>
+        <URL value="@../css/general.css" />
+        <URL value="@../css/login.css" />
+    </stylesheets>
+</AnchorPane>

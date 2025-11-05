@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.1.0'
+    id 'application'
+}
+
+group = 'Darius'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx{
+    modules = ['javafx.controls', 'javafx.fxml']
+    version = "21"
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'org.apache.logging.log4j:log4j-core:2.24.3'
+    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api
+    implementation 'org.apache.logging.log4j:log4j-api:2.24.3'
+
+    implementation project(":Service")
+    implementation project(":Model")
+    implementation project(":Utils")
+    implementation project (":Networking")
+}
+
+application{
+    mainClass = 'Darius.StartRpcClient'
+}
+
+jar{
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest{
+        attributes('Main-Class':'Darius.StartRpcClient')
+    }
+
+    from{
+        configurations.runtimeClasspath.collect{it.isDirectory() ? it : zipTree(it)}
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

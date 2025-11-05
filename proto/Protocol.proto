@@ -1,0 +1,113 @@
+syntax="proto3";
+package org.protocol;
+
+option java_package = "Darius.protobuf";
+option java_outer_classname = "Protobufs";
+
+message Entity{
+  int32 id = 1;
+}
+
+message Person{
+  Entity entity = 1;
+  string name = 2;
+  string surname = 3;
+  string cnp = 4;
+}
+
+message Employee{
+  Person person = 1;
+  string phoneNumber = 2;
+  string address = 3;
+  string username = 4;
+  string password = 5;
+}
+
+message Child{
+  Person person = 1;
+}
+
+message AgeGroup{
+  Entity entity = 1;
+  int32 Lower = 2;
+  int32 Upper = 3;
+}
+
+message Sprint{
+  Entity entity = 1;
+  float distance = 2;
+}
+
+message Event{
+  Entity entity = 1;
+  Sprint eventName = 2;
+  repeated AgeGroup ageGroups = 3;
+  string dateTime = 4;
+}
+
+message Registration{
+  Entity entity = 1;
+  Person person = 2;
+  repeated Event events = 3;
+  string dateTime = 4;
+}
+
+enum RequestType {
+  REQUEST_REGISTRATION_ADDED = 0;
+  REQUEST_LOGIN = 1;
+  REQUEST_FIND_EVENTS_BY_AGE_GROUP_ID = 2;
+  REQUEST_FIND_ALL_AGE_GROUPS = 3;
+  REQUEST_FIND_ALL_REGISTRATIONS_BY_SPRINT_AND_AGE_GROUP = 4;
+  REQUEST_FIND_ONE_REGISTRATION_BY_PERSON = 5;
+  REQUEST_FIND_ONE_GROUP_BY_AGE_REQUEST = 6;
+  REQUEST_FIND_ONE_CHILD_BY_CNP = 7;
+  REQUEST_ADD_CHILD = 8;
+  REQUEST_ADD_REGISTRATION = 9;
+  REQUEST_LOGOUT = 10;
+}
+
+enum ResponseType {
+  RESPONSE_REGISTRATION_ADDED = 0;
+  RESPONSE_OK = 1;
+  RESPONSE_ERROR = 2;
+  RESPONSE_FIND_EVENTS_BY_AGE_GROUP_ID = 3;
+  RESPONSE_FIND_ALL_AGE_GROUPS = 4;
+  RESPONSE_FIND_ALL_REGISTRATIONS_BY_SPRINT_AND_AGE_GROUP = 5;
+  RESPONSE_FIND_ONE_REGISTRATION_BY_PERSON = 6;
+  RESPONSE_FIND_ONE_GROUP_BY_AGE_REQUEST = 7;
+  RESPONSE_FIND_ONE_CHILD_BY_CNP = 8;
+}
+
+message SprintAndAgeGroup {
+  Sprint sprint = 1;
+  AgeGroup ageGroup = 2;
+}
+
+message Request{
+  RequestType requestType = 1;
+  oneof payload{
+    Employee employee = 2;
+    int32 ageGroupId = 3;
+    Sprint sprint = 4;
+    AgeGroup ageGroup = 5;
+    Person person = 6;
+    int32 age = 7;
+    string cnp = 8;
+    Child child = 9;
+    Registration registration = 10;
+    SprintAndAgeGroup sprintAndAgeGroup = 11;
+  }
+}
+
+message Response{
+  ResponseType responseType = 1;
+  string errorMessage = 2;
+  repeated Event events = 3;
+  repeated AgeGroup ageGroups = 4;
+  repeated Registration registrations = 5;
+  Person person = 6;
+  AgeGroup ageGroup = 7;
+  Child child = 8;
+  Registration registration = 9;
+  Employee employee = 10;
+}

@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.0'
+    id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'Darius'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.13.1'
+    // https://mvnrepository.com/artifact/org.springframework/spring-context
+    // implementation 'org.springframework:spring-context:6.1.1'
+
+    //implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.49.1.0'
+    //implementation 'org.hibernate.orm:hibernate-core:6.3.1.Final'
+    //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    //implementation 'org.jboss.logging:jboss-logging:3.4.1.Final'
+
+    testImplementation('com.jayway.jsonpath:json-path')
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+
+    implementation project(':Model')
+    implementation project(':Persistence')
+}
+
+test {
+    useJUnitPlatform()
+}

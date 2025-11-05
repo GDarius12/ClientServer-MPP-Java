@@ -1,0 +1,35 @@
+
+.root{
+    -fx-background-color: white;
+    -fx-font-family: "Calibri";
+    -fx-font-size: 15;
+}
+
+* {
+    -fx-text-fill: black;
+}
+
+.errorLabel{
+    -fx-text-fill: rgba(246, 0, 0, 0.94);
+}
+
+.button{
+    -fx-background-color: lightgray;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.button:hover{
+    -fx-background-color:gray;
+    -fx-text-fill: #005792;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0.7, 0, 2);
+}
+
+.choice-box{
+    -fx-background-color: gray;
+    -fx-border-color: gray;
+    -fx-border-width: 0.5;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+}
+

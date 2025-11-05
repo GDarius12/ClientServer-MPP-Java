@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Darius.controller.MainController">
+    <children>
+        <Label layoutX="42.0" layoutY="62.0" text="Available sprints" />
+        <ChoiceBox fx:id="ageGroupChoiceBox" layoutX="42.0" layoutY="100.0" prefWidth="150.0" />
+        <ChoiceBox fx:id="eventChoiceBox" layoutX="218.0" layoutY="100.0" prefWidth="150.0" />
+        <Button layoutX="388.0" layoutY="100.0" mnemonicParsing="false" onAction="#searchRegistrationButtonHandler" styleClass="searchButton">
+            <graphic>
+                <ImageView>
+                    <Image url="@/images/search.png" />
+                    <fitHeight>20</fitHeight>
+                    <fitWidth>20</fitWidth>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Search" />
+            </tooltip>
+        </Button>
+        <TableView fx:id="tableView" layoutX="42.0" layoutY="175.0" prefHeight="200.0" prefWidth="303.0" visible="false">
+            <columns>
+                <TableColumn fx:id="surnameColumn" prefWidth="75.0" text="Surname" />
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="ageColumn" prefWidth="60.20001220703125" text="Age" />
+                <TableColumn fx:id="noOfSprintsColumn" prefWidth="90.20002746582031" text="NoOfSprints" />
+            </columns>
+        </TableView>
+        <Label fx:id="registeredChildrenLabel" layoutX="42.0" layoutY="143.0" visible="false" />
+        <Button layoutX="544.0" layoutY="28.0" mnemonicParsing="false" onAction="#logoutButtonHandler">
+            <graphic>
+                <ImageView styleClass="button">
+                    <Image url="@/images/logout.png" />
+                    <fitHeight>20</fitHeight>
+                    <fitWidth>20</fitWidth>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Logout" />
+            </tooltip>
+        </Button>
+        <Button onAction="#addRegistration" layoutX="528.0" layoutY="350.0" mnemonicParsing="false">
+            <graphic>
+                <ImageView>
+                    <Image url="@/images/addPerson.png" />
+                    <fitHeight>30</fitHeight>
+                    <fitWidth>30</fitWidth>
+                </ImageView>
+            </graphic>
+            <tooltip>
+                <Tooltip text="Add participant" />
+            </tooltip>
+        </Button>
+        <Button text="View All Registrations" onAction="#openAllRegistrationsWindow" layoutX="42.0" layoutY="380.0" />
+
+    </children>
+    <stylesheets>
+        <URL value="@../css/general.css" />
+        <URL value="@../css/home.css" />
+    </stylesheets>
+</AnchorPane>

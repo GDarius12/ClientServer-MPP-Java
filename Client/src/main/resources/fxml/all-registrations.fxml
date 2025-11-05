@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Darius.controller.AllRegistrationsController" prefWidth="600" prefHeight="400">
+    <TableView fx:id="registrationsTable" layoutX="10" layoutY="10" prefHeight="380" prefWidth="580">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Name" prefWidth="120"/>
+            <TableColumn fx:id="surnameColumn" text="Surname" prefWidth="120"/>
+            <TableColumn fx:id="ageColumn" text="Age" prefWidth="100"/>
+            <TableColumn fx:id="noOfSprintsColumn" text="No. of Sprints" prefWidth="120"/>
+        </columns>
+    </TableView>
+</AnchorPane>

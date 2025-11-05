@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Darius.controller.RegistrationController">
+    <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <GridPane layoutX="108.0" layoutY="123.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="84.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="164.0" minWidth="10.0" prefWidth="116.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <TextField fx:id="cnpTextField" promptText="CNP" GridPane.columnIndex="1" />
+                        <TextField fx:id="nameTextField" promptText="Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="surnameTextField" promptText="Surname" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="CNP " textAlignment="CENTER" />
+                        <Label text="Name " GridPane.rowIndex="2" />
+                        <Label text="Surname" GridPane.rowIndex="4" />
+                        <Label fx:id="cnpErrorLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="surnameErrorLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="nameErrorLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    </children>
+                </GridPane>
+                <Button layoutX="308.0" layoutY="322.0" mnemonicParsing="false" onAction="#confirmButtonHandler" text="Confirm">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/images/confirm.png" />
+                            <fitHeight>30</fitHeight>
+                            <fitWidth>30</fitWidth>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Confirm person's data" />
+                    </tooltip>
+                </Button>
+                <Label layoutX="194.0" layoutY="69.0" text="Participant data" />
+                <Button onAction="#backButtonHandler" layoutX="14.0" layoutY="14.0" mnemonicParsing="false">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/images/back-arrow.png" />
+                            <fitHeight>15</fitHeight>
+                            <fitWidth>15</fitWidth>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Back" />
+                    </tooltip>
+                </Button>
+            </children></AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+            <children>
+                <Button fx:id="registerButton" layoutX="45.0" layoutY="322.0" mnemonicParsing="false" onAction="#registerButtonHandler" text="Register" visible="false">
+                    <graphic>
+                        <ImageView>
+                            <Image url="@/images/register.png" />
+                            <fitHeight>30</fitHeight>
+                            <fitWidth>22.0</fitWidth>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Register" />
+                    </tooltip>
+                </Button>
+                <ListView fx:id="eventListView" layoutX="16.0" layoutY="117.0" prefHeight="151.0" prefWidth="144.0" />
+                <Label fx:id="eventsLabel" layoutX="45.0" layoutY="69.0" text="Event List" visible="false" />
+            </children></AnchorPane>
+    </items>
+</SplitPane>
